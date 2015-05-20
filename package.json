@@ -1,0 +1,18 @@
+{
+  "name": "fiber",
+  "version": "1.0.0",
+  "description": "fiber",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^0.8.1",
+    "ejs": "^2.3.1",
+    "express": "^4.12.4",
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.3"
+  }
+}
