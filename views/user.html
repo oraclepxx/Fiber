@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="fiber">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>User profile</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="../static/script/fiber.js"></script>
+    <!--<script src="../static/script/fiberCtrl.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+</head>
+<body>
+    <div class="from-container" ng-controller="fiberCtrl">
+        <p class="form-header">User profile</p>
+        <form method="post" action="/user/profile">
+            <label>User Name:</label>
+            <input type="text" name="username" ng-model="user.username" disabled><br>
+            <label>Email:</label>
+            <input type="text" name="email" ng-model="user.email"><br>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+</body>
+</html>

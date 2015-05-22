@@ -1,0 +1,58 @@
+div.from-container {
+    display: inline-block;
+    border: 4px ridge lightblue;
+    width: 280px;
+    border-radius: 10px;
+    margin-left: 40%;
+}
+
+p.form-header {
+    margin: 0px;
+    font: 24px bold;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    color: white;
+    background: lightblue;
+    text-align: center;
+}
+
+p.form-bottom {
+    font: 14px bold;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    text-align: center;
+}
+
+h2.welcome {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+}
+
+a.link-style {
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+}
+
+form {
+    margin: 10px;
+}
+
+label {
+    width: 80px;
+    font: 14px bold;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    display: inline-block;
+}
+
+input {
+    border: 3px ridge lightblue;
+    border-radius: 5px;
+    padding: 3px;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+}
+
+input[type=submit] {
+    font: 18px bold;
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    width: 120px;
+    color: white;
+    background: lightblue;
+    margin-top: 15px;
+    margin-left: 85px;
+}
