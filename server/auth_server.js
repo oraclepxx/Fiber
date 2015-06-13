@@ -11,6 +11,7 @@ var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var mongoStore = require('connect-mongo')({session: expressSession});
 var mongoose = require('mongoose');
+var passport = require('passport');
 
 require('../models/users_model.js');
 var router = require('./routes.js');
@@ -31,6 +32,9 @@ app.use(expressSession({
         collection: 'session'
     })
 }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 router(app);
 app.listen(8111);

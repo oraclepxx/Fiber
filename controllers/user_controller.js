@@ -18,8 +18,8 @@ function signup(req, resp) {
     user.set('email', req.body.email);
     user.save(function (err) {
         if (err) {
-            resp.session.error = err;
-            resp.redirect('/signup');
+            req.session.error = err;
+            resp.redirect('/error');
         } else {
             req.session.user = user.id;
             req.session.username = user.username;
@@ -47,7 +47,7 @@ function login(req, resp) {
         if (err) {
             req.session.regenerate(function () {
                 req.session.msg = err;
-                resp.redirect('/');
+                resp.redirect('/error');
             });
         }
 
@@ -58,11 +58,11 @@ function login(req, resp) {
 function updateUser(req, resp) {
     User.findOne({_id: req.session.user}).exec(function (err, user) {
         user.set('email', req.body.email);
-        user.save(function () {
+        user.save(function (err) {
             if (err) {
-                resp.session.error = err;
+                req.session.error = err;
             } else {
-                resp.session.msg = 'Updated';
+                req.session.msg = 'Updated';
             }
             resp.redirect('/user');
         });
@@ -75,7 +75,6 @@ function getUser(req, resp) {
             resp.json(404, {err: 'User not found'});
         } else {
             resp.json(user);
-            console.log(resp.json(user));
         }
     });
 }
@@ -100,8 +99,16 @@ function deleteUser(req, resp) {
     });
 }
 
+function errorHandler(req, resp) {
+    req.session.msg = "Error occurs";
+    req.session.destroy(function () {
+        resp.redirect('/error');
+    });
+}
+
 exports.signup = signup;
 exports.login = login;
 exports.updateUser = updateUser;
 exports.deleteUser = deleteUser;
 exports.getUser = getUser;
+exports.errorHandler = errorHandler;

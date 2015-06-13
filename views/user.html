@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html ng-app="fiber">
+<html ng-app="fiberApp">
 <head lang="en">
     <meta charset="UTF-8">
     <title>User profile</title>
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
     <script src="../static/script/fiber.js"></script>
-    <!--<script src="../static/script/fiberCtrl.js"></script>-->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="../static/script/fiberCtrl.js"></script>
 </head>
 <body>
     <div class="from-container" ng-controller="fiberCtrl">
         <p class="form-header">User profile</p>
-        <form method="post" action="/user/profile">
+        <form method="post" action="/user/update">
             <label>User Name:</label>
-            <input type="text" name="username" ng-model="user.username" disabled><br>
+            <input type="text" name="username" ng-model="user.username" value="{{user.name}}" disabled><br>
             <label>Email:</label>
-            <input type="text" name="email" ng-model="user.email"><br>
-            <input type="submit" value="Save">
+            <input type="text" name="email" ng-model="user.email" value="{{user.email}}"><br>
+            <input type="submit" value="Update">
         </form>
+    </div>
+    <hr>
+    <div style="margin-left: 40%">
+        <form method="post" action="/user/delete">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+    <div style="margin-left: 50%">
+        <a href="/">Back</a>
     </div>
 </body>
 </html>

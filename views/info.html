@@ -2,20 +2,17 @@
 <html ng-app="fiberApp">
 <head lang="en">
     <meta charset="UTF-8">
-    <title>User Login</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>Google Authentication</title>
     <script src="../lib/jquery-1.11.3.js"></script>
     <script src="../lib/angular.js"></script>
     <script src="../lib/angular-route.js"></script>
     <script src="../static/script/fiber.js"></script>
     <script src="../static/script/fiberCtrl.js"></script>
 </head>
-<body>
-    <div ng-controller="fiberCtrl">
-        <h2 class="welcome">Welcome. You are logged in as {{user.username}}</h2>
-        <a class="link-style" href="/user">Edit User</a><br><br>
-        <a class="link-style" href="/logout">Logout</a>
-    </div>
-    <hr>
+<body ng-controller="fiberCtrl">
+    <h2>Google Authenticated Information</h2>
+    <p>ID: {{user.username}}</p>
+    <p>Email: {{user.email}}}</p>
+    <a href="/logout">Logout</a>
 </body>
 </html>
